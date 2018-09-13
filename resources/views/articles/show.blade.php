@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Articles</div>
+                <div class="card-header">{{$article->title}}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,9 +14,12 @@
                         </div>
                     @endif
 
-                    @foreach($articles as $article)
-                            <p><a href="/home/articles/{{$article->id}}">{{$article->title}} - {{$article->small_body}}</a></p>
-                    @endforeach
+                        <h1>{{$article->title}}</h1>
+                        @if ($article->image)
+                            <img src="{{$article->image}}">
+                        @endif
+                        <h2>{{$article->small_body}}</h2>
+                        <h5>{{$article->body}}</h5>
                 </div>
             </div>
         </div>

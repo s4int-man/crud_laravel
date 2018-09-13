@@ -22,8 +22,5 @@ Route::get('/about', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home/articles', 'ArticlesController@index');
-Route::get('/home/articles/{article}', 'ArticlesController@getArticle');
-Route::get('/home/users', 'UsersController@index');
-Route::get('/home/users/{user}', 'UsersController@getUser');
+Route::resource('/home/articles', 'ArticlesController')->middleware('auth');
+Route::resource('/home/users', 'UsersController')->middleware(['auth', 'admin']);
