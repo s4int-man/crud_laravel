@@ -16,7 +16,7 @@
 
                         <h1>{{$article->title}}</h1>
                         @if ($article->image)
-                            <img src="$article->image">
+                            <img src="{{$article->image}}">
                         @endif
                         <h2>{{$article->small_body}}</h2>
                         <h5>{{$article->body}}</h5>
